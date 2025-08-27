@@ -39,20 +39,19 @@ RUN cmake --build .
 # Stage 2: Final image
 FROM ubuntu:22.04 AS final
 
-# Install runtime dependencies
+# Install runtime dependencies without version numbers
 RUN apt-get update && apt-get install -y \
     libsqlite3-0 \
     libgumbo2 \
-    libz-1g \
-    libbrotli1 \
+    libz-dev \
+    libbrotli-dev \
     libstdc++6 \
     ca-certificates
 
 # Copy the compiled executable from the build stage
 COPY --from=build /app/CPPProxy /usr/local/bin/CPPProxy
 
-# Copy the SQLite database
-COPY --from=build /app/cookies.sqlite /usr/local/bin/cookies.sqlite
+# The SQLite database is created at runtime, so we don't copy it.
 
 # Set the command to run the application
 CMD ["/usr/local/bin/CPPProxy"]
