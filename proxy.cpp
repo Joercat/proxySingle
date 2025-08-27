@@ -1,4 +1,3 @@
-
 #include <boost/beast/core.hpp>
 #include <boost/beast/http.hpp>
 #include <boost/beast/ssl.hpp>
@@ -7,6 +6,7 @@
 #include <boost/asio/signal_set.hpp>
 #include <boost/config.hpp>
 #include <boost/url.hpp>
+#include <boost/system/result.hpp>
 
 // --- Standard and Third-Party Library Includes ---
 #include <spdlog/spdlog.h>
@@ -30,6 +30,7 @@
 #include <mutex>
 #include <stdexcept>
 #include <cstring>
+#include <algorithm>
 
 // --- Namespaces ---
 namespace beast = boost::beast;
