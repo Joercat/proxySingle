@@ -1,14 +1,4 @@
-// main.cpp (Consolidated Version)
-// A high-performance, asynchronous C++ web proxy in a single file.
-//
-// Features:
-// - Boost.Beast for networking (HTTP/S, WebSockets)
-// - SQLite for persistent cookie storage
-// - Gumbo for HTML parsing and rewriting
-// - spdlog for structured JSON logging
-// - Rate limiting, health checks, and graceful shutdown.
 
-// --- Core Includes ---
 #include <boost/beast/core.hpp>
 #include <boost/beast/http.hpp>
 #include <boost/beast/ssl.hpp>
